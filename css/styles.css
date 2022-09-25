@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/* CUSTOM PROPERTIES */
+:root{
+  --pale-blue-color: hsl(225, 100%, 94%);
+  --bright-blue-color: hsl(245, 75%, 52%);
+
+  --white-color: hsl(0, 0%, 100%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue-color: hsla(224, 23%, 55%, 1);
+  --dark-blue-color: hsl(223, 47%, 23%);
+
+  --fs-13: .813rem;
+  --fs-14: .875rem;
+  --fs-16: 1rem;
+  --fs-28: 1.75rem;
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+  --ff-red-hat-display: 'Red Hat Display', sans-serif;
+}
+
+/* RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body{
+  font-size: var(--fs-16);
+  font-weight: var(--fw-500);
+  font-family: var(--ff-red-hat-display);
+  line-height: 1.6;
+  color: var(--desaturated-blue-color);
+  background-color: var(--pale-blue-color);
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+.background-image{
+  background: url('../images/pattern-background-mobile.svg') no-repeat center/cover;
+  height: 40rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+h1, h2, h3{
+  line-height: 1.1;
+}
+
+h2{
+  font-size: var(--fs-28);
+  font-weight: var(--fw-900);
+  color: var(--dark-blue-color);
+}
+
+img{
+  width: 100%;
+}
+
+/* REUSABLE CLASSES */
+.text-center{
+  text-align: center;
+}
+
+.button{
+  display: block;
+  font-weight: var(--fw-700);
+  background: none;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  width: 100%;
+  padding: .8rem .8rem;
+}
+
+/* CARD */
+.card{
+  overflow: hidden;
+  border-radius: 1rem;
+  max-width: 350px;
+  background-color: var(--white-color);
+}
+
+.card-content{
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.plan{
+  background-color: var(--very-pale-blue);
+  border-radius: .5rem;
+  padding: 2em;
+  display: flex;
+  gap: 1rem;
+  margin-block-end: .5rem;
+}
+
+.plan-info{
+  margin-block-start: .5rem;
+}
+
+.plan-title{
+  font-size: var(--fs-14);
+  font-weight: var(--fw-900);
+  color: var(--dark-blue-color);
+}
+
+.link{
+  font-size: var(--fs-13) ;
+  font-weight: var(--fw-700);
+  color: var(--bright-blue-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: auto;
+}
+
+.link:is(:hover,:focus){
+ opacity: .8;
+  text-decoration: none;
+}
+
+.price{
+  margin-block-start: .2rem;
+  font-size: var(--fs-14);
+}
+
+.btn-primary{
+  color: var(--white-color);
+  background-color: var(--bright-blue-color);
+  box-shadow: 0px 5px 5px 1px var(--bright-blue-color);
+}
+
+.btn-primary:is(:hover,:focus){
+  opacity: .8;
+}
+
+.btn-naked{
+  color: var(--desaturated-blue-color);
+}
+
+.btn-naked:is(:hover,:focus){
+  color: var(--dark-blue-color);
+}
+
+/* MEDIA QUERY */
+@media (min-width: 48em){
+  .background-image{
+    background: url('../images/pattern-background-desktop.svg') no-repeat center/cover;
+    height: 50vh;
+  }
+
+  .card{
+    max-width: 28.125rem;
+  }
+
+  .card-content{
+    padding: 3rem;
+  }
+
+  .plan{
+    padding: 1.4rem;
+  }
+
+}
