@@ -169,7 +169,7 @@ img {
 .plan {
 	background-color: var(--very-pale-blue);
 	border-radius: 0.5rem;
-	padding: 2em;
+	padding: 1em;
 	display: flex;
 	gap: 1rem;
 	margin-block-end: 0.5rem;
@@ -240,7 +240,7 @@ img {
 		padding: 3rem;
 	}
 
-	.plan {
+	.plan{
 		padding: 1.4rem;
 	}
 }
